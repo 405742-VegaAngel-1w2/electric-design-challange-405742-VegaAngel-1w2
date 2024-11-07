@@ -1,5 +1,210 @@
 {
-  "budgets": [],
+  "budgets": [
+    {
+      "id": "87f9",
+      "name": "1w2",
+      "date": "2024-11-20",
+      "modules": [
+        {
+          "moduleType": "3",
+          "ambient": "Comedor"
+        },
+        {
+          "moduleType": "5",
+          "ambient": "Dormitorio"
+        }
+      ]
+    },
+    {
+      "id": "73d6",
+      "name": "Carlos",
+      "date": "2024-11-14",
+      "modules": [
+        {
+          "moduleType": "1",
+          "ambient": "Comedor"
+        },
+        {
+          "moduleType": "6",
+          "ambient": "Dormitorio"
+        }
+      ]
+    },
+    {
+      "id": "a186",
+      "client": "1w2",
+      "date": "2024-10-31",
+      "modules": [
+        {
+          "moduleType": "5",
+          "ambient": "Cocina"
+        },
+        {
+          "moduleType": "6",
+          "ambient": "Dormitorio"
+        },
+        {
+          "moduleType": "1",
+          "ambient": "Living"
+        }
+      ]
+    },
+    {
+      "id": "a60e",
+      "client": "Carlos Vega",
+      "date": "2024-11-23",
+      "modules": [
+        {
+          "moduleType": "6",
+          "ambient": "Cocina"
+        },
+        {
+          "moduleType": "1",
+          "ambient": "Living"
+        }
+      ]
+    },
+    {
+      "id": "2fae",
+      "client": "nahuelvegavega@gmail.com",
+      "date": "2024-11-14",
+      "modules": [
+        {
+          "moduleType": "2",
+          "ambient": "Comedor"
+        },
+        {
+          "moduleType": "1",
+          "ambient": "Dormitorio"
+        }
+      ]
+    },
+    {
+      "id": "7a5a",
+      "client": "RRR",
+      "date": "2024-11-14",
+      "modules": [
+        {
+          "moduleType": "5",
+          "ambient": "Comedor",
+          "price": 1700,
+          "places": 3
+        },
+        {
+          "moduleType": "6",
+          "ambient": "Living",
+          "price": 5000,
+          "places": 1
+        }
+      ]
+    },
+    {
+      "id": "97d9",
+      "client": "ttt",
+      "date": "2024-11-22",
+      "modules": [
+        {
+          "moduleType": "2",
+          "ambient": "Dormitorio",
+          "price": 2000,
+          "places": 2
+        },
+        {
+          "moduleType": "6",
+          "ambient": "Comedor",
+          "price": 5000,
+          "places": 1
+        },
+        {
+          "moduleType": "5",
+          "ambient": "Living",
+          "price": 1700,
+          "places": 3
+        }
+      ]
+    },
+    {
+      "id": "2972",
+      "client": "1w4",
+      "date": "2024-11-15",
+      "modules": [
+        {
+          "moduleType": "5",
+          "ambient": "Living",
+          "price": 1700,
+          "places": 3
+        },
+        {
+          "moduleType": "5",
+          "ambient": "Comedor",
+          "price": 1700,
+          "places": 3
+        },
+        {
+          "moduleType": "5",
+          "ambient": "Dormitorio",
+          "price": 1700,
+          "places": 3
+        }
+      ]
+    },
+    {
+      "id": "4780",
+      "client": "dddd",
+      "date": "2024-11-15",
+      "modules": [
+        {
+          "moduleType": "6",
+          "ambient": "Comedor",
+          "price": 5000,
+          "places": 1
+        },
+        {
+          "moduleType": "6",
+          "ambient": "Dormitorio",
+          "price": 5000,
+          "places": 1
+        },
+        {
+          "moduleType": "6",
+          "ambient": "Living",
+          "price": 5000,
+          "places": 1
+        }
+      ]
+    },
+    {
+      "id": "58af",
+      "client": "1w2",
+      "date": "2024-11-07",
+      "modules": [
+        {
+          "moduleType": "2",
+          "ambient": "Living",
+          "price": 2000,
+          "places": 2
+        },
+        {
+          "moduleType": "5",
+          "ambient": "Comedor",
+          "price": 1700,
+          "places": 3
+        },
+        {
+          "moduleType": "1",
+          "ambient": "Cocina",
+          "price": 1000,
+          "places": 1
+        },
+        {
+          "moduleType": "6",
+          "ambient": "Dormitorio",
+          "price": 5000,
+          "places": 1
+        }
+      ]
+    }
+  ],
   "module-types": [
     {
       "id": "1",

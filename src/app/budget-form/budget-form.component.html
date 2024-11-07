@@ -2,3 +2,131 @@
 https://getbootstrap.com/docs/5.3/forms/form-control/#example
 https://getbootstrap.com/docs/5.3/forms/select/#default
 https://getbootstrap.com/docs/5.3/forms/select/#default -->
+<div class="row conteiner-fluid">
+  <div class="col-2"></div>
+  <div class="col-8">
+    <form [formGroup]="form">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nombre</label>
+        <input
+          [ngClass]="{
+            'is-invalid':
+              form.get('client')?.touched && form.get('client')?.invalid
+          }"
+          type="text"
+          class="form-control"
+          formControlName="client"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+        @if(form.get('client')?.invalid && form.get('client')?.touched){
+        <div class="text-danger">Complete el Cliente</div>
+        }
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Fecha</label>
+        <input
+          [ngClass]="{
+            'is-invalid': form.get('date')?.touched && form.get('date')?.invalid
+          }"
+          formControlName="date"
+          type="date"
+          class="form-control"
+          id="exampleInputPassword1"
+          max="{{ today }}"
+        />
+        @if(form.get('date')?.value == '' && form.get('date')?.touched){
+        <div class="text-danger">Complete la fecha</div>
+        }
+      </div>
+      <div class="row">
+        <div class="col-10"></div>
+        <div class="col-2">
+          <a (click)="onNewEvent()" class="link-opacity-100">+ Modulo</a>
+        </div>
+      </div>
+      <div class="mb-3">
+        <div formArrayName="modules" class="row">
+          @for (item of modules.controls; track $index) {
+          <div class="col-6" [formGroupName]="$index">
+            <h5>Modulo {{ $index + 1 }}</h5>
+            <label for="">Tipo de Modulo</label
+            ><button
+              (click)="onDeleteEvent($index)"
+              type="button"
+              class="btn-close"
+              aria-label="Close"
+            ></button>
+            <select
+              class="form-select"
+              (change)="cambiarModulo($index)"
+              aria-label="Default select example"
+              formControlName="moduleType"
+              [ngClass]="{
+                'is-invalid':
+                  form.get('ambient')?.touched && form.get('ambient')?.invalid
+              }"
+            >
+              @if(TypeModules != null){
+              <option value="" disabled selected>Open this select menu</option>
+              @for (item of TypeModules; track $index) {
+              <option [value]="item.id">{{ item.name }}</option>
+              } }
+            </select>
+            <label for="">Ambiente</label>
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              formControlName="ambient"
+              [ngClass]="{
+                'is-invalid': form.get('modules')?.get('ambient')?.touched
+              }"
+            >
+              @if(zone != null){
+              <option value="" disabled selected>Open this select menu</option>
+              @for (item of zone; track $index) {
+              <option [value]="item">{{ item }}</option>
+              } }
+            </select>
+            @if( form.get('modules')?.get('ambient')?.touched &&
+            form.get('modules')?.get('ambient')?.value == "" ){
+            <div class="text-danger">Complete el Email</div>
+            }
+            <label for="">Precio</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text">$</span>
+              <input
+                type="text"
+                formControlName="price"
+                class="form-control"
+                aria-label="Dollar amount (with dot and two decimal places)"
+              />
+            </div>
+            <label for="">Lugares</label>
+            <input
+              type="text"
+              formControlName="places"
+              class="form-control"
+              aria-label="Dollar amount (with dot and two decimal places)"
+            />
+          </div>
+          }
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <button (click)="back()" type="submit" class="btn btn-secondary">
+            Volver
+          </button>
+        </div>
+        <div class="col-8"></div>
+        <div class="col-2">
+          <button (click)="save()" type="submit" class="btn btn-primary">
+            Guardar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-2"></div>
+</div>

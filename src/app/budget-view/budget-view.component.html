@@ -1,1 +1,23 @@
 <!-- BUILD IT FROM HERE https://getbootstrap.com/docs/5.3/components/card/#sizing -->
+<div class="row">
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-header">
+        <h2>Presupuesto #{{ this.id }}</h2>
+        <p>Cajas Necesarias : {{ this.boxNecesaries }}</p>
+      </div>
+      <div class="card-body">
+        @for (item of cotizaciones; track $index) {
+        <h5 class="card-title">{{ item.ambient }}</h5>
+        <p class="card-text">
+           @for (item of cotizaciones[$index].modules; track $index) { 
+            <p>Nombre:{{item.name}}- Precio:{{item.price}}- Slots:{{item.slots}}</p>
+          } 
+        </p>
+        }
+        <p class="fw-bold">Total Cotizacion : {{ this.total }}</p>
+        <a (click)="backToList()" class="link-opacity-100">Volver</a>
+      </div>
+    </div>
+  </div>
+</div>
